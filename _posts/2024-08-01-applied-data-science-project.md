@@ -1,9 +1,8 @@
----
-layout: post
-author: Yaamanni Kasavan
-title: "Applied Data Science Project Documentation"
-categories: ITD214
----
+
+<img width="928" height="337" alt="Screenshot 2025-08-31 at 7 12 30 PM" src="https://github.com/user-attachments/assets/127bc482-7537-4c86-975a-fe5b58091a62" /><img width="928" height="555" alt="Screenshot 2025-08-31 at 7 12 52 PM" src="https://github.com/user-attachments/assets/b71b9eac-c8a2-46ac-af85-b2c8aeff2aef" />
+
+## **Yaamanni Kasavan** | ITD 214
+
 ## Project Background
 This project focuses on Kapital Fashion, a global fashion brand aiming to strengthen its market position through data-driven decision-making. As the fashion industry becomes increasingly competitive, understanding customer behavior, optimizing pricing models, and enhancing engagement strategies are critical to sustaining growth and loyalty.
 
@@ -20,9 +19,6 @@ To achieve this goal, we have identified four key business objectives:
 4️⃣ Leverage text analytics from online fashion discussions to inform and refine Kapital’s global product, pricing, and engagement strategies.
 
 Through these objectives, the project **combines quantitative analysis (pricing, segmentation, forecasting) with qualitative insights (text analytics)** to deliver a comprehensive, data-backed strategy for Kapital Fashion’s long-term success.
-
-## Work Accomplished
-Document your work done to accomplish the outcome
 
 ### Data Preparation
 **Dataset Details**
@@ -65,11 +61,11 @@ Document your work done to accomplish the outcome
 
 **Modelling Technique**
 - Technique: Binary classification to predict Loyal (Weekly/Bi-Weekly/Fortnightly/Monthly, ≥12 purchases/year) vs. Non-Loyal (Every 3 Months/Quarterly/Annually, <12 purchases/year).
-- Models:
+**Models:**
 - Logistic Regression: Linear, interpretable, baseline for binary classification.
 - SVM (RBF kernel): Captures non-linear patterns, effective with balanced data (post-SMOTE).
 - KNN: Instance-based, leverages local patterns, sensitive to scaling.
-- Rationale:
+**Rationale:**
 Binary classification simplifies the 7-class problem, aligning with retention by segmenting customers into actionable groups.
 Logistic Regression is straightforward and interpretable for business use.
 SVM and KNN add non-linear capabilities to capture potential patterns, despite weak correlations.
@@ -105,7 +101,10 @@ Fit on balanced data, using RBF kernel to capture potential non-linear patterns 
 Parameters tuned: n_neighbors ([3, 5]), weights ('distance' for weighted voting).
 Fit on balanced data, classifying based on nearest neighbors in feature space.
 
-**Model Assessment - Determine Criteria**
+## Model Assessment 
+
+**Determine Criteria**
+
 **- Primary Metric: Accuracy** | The proportion of correct predictions (True Loyal + True Non-Loyal) divided by total predictions. It measures overall model correctness.
 Why Chosen: Simple and business-friendly, directly answers "How often is the model right in identifying loyal customers?" For binary classification, it's intuitive for retention decisions (e.g., if accuracy is ~0.52, ~52% of targeted customers are truly Loyal).
 Threshold: Aim for >0.50 (better than random guessing); lower indicates weak features.
@@ -131,26 +130,35 @@ Why Chosen: Business stakeholders need visual insights to trust and act on predi
 Threshold: Clear patterns in plots (e.g., higher probabilities for actual Loyal); weak patterns indicate feature limitations.
 Expansion: Confusion matrices quantify errors visually; scatter plot expands assessment by linking predictions to key features like Review Rating, helping refine strategies (e.g., target high-rating Loyal predictions).
 
-**ASSESS MODEL 1 :**
+✴️ **ASSESS MODEL 1 :**
 **LOGISTIC REGRESSION:**
 - Accuracy: ~0.4961
 - Macro F1: ~0.50 (balanced, precision/recall ~0.48-0.50).
 - Confusion Matrix: ~175/359 Non-Loyal correct, ~212/421 Loyal correct (estimated from accuracy).
 - Assessment: Near random guessing, limited by linear assumptions and weak features.
+  
+  <img width="295" height="212" alt="Screenshot 2025-08-31 at 7 04 56 PM" src="https://github.com/user-attachments/assets/7cd29221-2d7a-40b0-a74b-d33ca4599a34" />
 
-**ASSESS MODEL 2 :**
+
+✴️ **ASSESS MODEL 2 :**
 **SVM (RBF):**
 - Accuracy: ~0.50
 - Macro F1: ~0.49
 - Confusion Matrix: ~146/359 Non-Loyal correct, ~244/421 Loyal correct.
 - Assessment: Best performer, captures some non-linear patterns
+  
+<img width="304" height="212" alt="Screenshot 2025-08-31 at 7 05 17 PM" src="https://github.com/user-attachments/assets/d537f14a-f6b8-4f5e-b055-bbc7380d62f6" />
 
-**ASSESS MODEL 3:**
+
+✴️ **ASSESS MODEL 3:**
 **KNN:**
 - Accuracy: ~0.4923
 - Macro F1: ~0.49
 - Confusion Matrix: ~180/359 Non-Loyal correct, ~204/421 Loyal correct.
 - Assessment: Comparable to Logistic Regression, sensitive to scaling.
+  
+<img width="281" height="205" alt="Screenshot 2025-08-31 at 7 05 35 PM" src="https://github.com/user-attachments/assets/67c45d5b-0d15-44df-a299-a5a94b648d21" />
+
 
 
 ### Evaluation
@@ -190,6 +198,8 @@ Expansion: Confusion matrices quantify errors visually; scatter plot expands ass
 
 
 ## Recommendation and Analysis
+<img width="819" height="427" alt="Screenshot 2025-08-31 at 7 29 14 PM" src="https://github.com/user-attachments/assets/53b91dfc-f190-42ee-9cb4-ef4e2156af86" />
+
 
 **Business Issues**
 
@@ -211,7 +221,7 @@ This suggests the features don't separate classes well. e.g., similar Review Rat
 The dataset lacks critical retail loyalty drivers like purchase amount, recency, product type, or engagement metrics, limiting model performance to low accuracy.
 Retail loyalty is multifaceted studies show it's driven by service quality, product quality, and brand image, or emotional factors like self-esteem and fun shopping experiences. Without these, the model can't forecast accurately, leading to suboptimal retention strategies that ignore personalized service or value-added offerings.
 
-**Recommendations:**
+## Recommendations: 
 
 To address the issues and improve loyalty forecasting for retention strategies, I recommend a phased approach: short-term fixes using the current model, medium-term enhancements, and long-term data strategies. These leverage the code's insights and external research on loyalty drivers, incorporating high-quality products, emotional experiences, and personalized service.
 
@@ -231,20 +241,23 @@ Use customer surveys or CRM data to capture emotional drivers (e.g., self-esteem
 Foster a data-driven culture: Prioritize EDA in future projects to avoid weak predictors.
 Invest in loyalty programs inspired by successful retail examples (e.g., tiered rewards), focusing on innovation and customer service to drive emotional loyalty. Track ROI: Aim for 10-15% revenue uplift from better retention, monitoring shifts in loyalty drivers
 
-**DID NOT MEET BUSINESS OBJECTIVE** - Relying solely on review ratings and purchase frequency to forecast customer loyalty does not effectively meet business objectives, as the model’s accuracy is only marginally better than random guessing.
+
+## DID NOT MEET BUSINESS OBJECTIVE ❌ - Relying solely on review ratings and purchase frequency to forecast customer loyalty does not effectively meet business objectives, as the model’s accuracy is only marginally better than random guessing.
 
 ## AI Ethics
+<img width="500" height="246" alt="Screenshot 2025-08-31 at 7 33 02 PM" src="https://github.com/user-attachments/assets/2a5cf50e-566c-4a15-9921-2b6baaa97483" />
+
 
 **1. Privacy**
-Issue: The dataset includes sensitive attributes (Customer ID, Age, Review Rating, Previous Purchases), posing privacy risks if mishandled.
+**Issue:** The dataset includes sensitive attributes (Customer ID, Age, Review Rating, Previous Purchases), posing privacy risks if mishandled.
 
-Context: Customer ID is a unique identifier, and Age is protected under regulations like GDPR/CCPA. Combining these with purchase behavior (Previous Purchases, Frequency) risks re-identification if linked with external data (e.g., public X profiles). The code lacks explicit security measures (e.g., encryption).
+**Context:** Customer ID is a unique identifier, and Age is protected under regulations like GDPR/CCPA. Combining these with purchase behavior (Previous Purchases, Frequency) risks re-identification if linked with external data (e.g., public X profiles). The code lacks explicit security measures (e.g., encryption).
 Risks:
-Data Breaches: Insecure storage could expose customer details, leading to legal penalties or reputational harm.
+**Data Breaches:** Insecure storage could expose customer details, leading to legal penalties or reputational harm.
 Re-identification: Linking Customer ID with external sources could reveal identities, especially for unique Age/Purchase combinations.
 Intrusive Profiling: Using Age and purchase data for loyalty predictions may feel invasive without clear consent.
 
-Mitigations:
+**Mitigations:**
 Anonymization: Remove or hash Customer ID before modeling. Bin Age (e.g., 18-25, 26-35) to reduce specificity.
 Data Security: Use encrypted databases with role-based access controls. Implement secure pipelines (e.g., HTTPS for data transfers).
 Consent: Obtain explicit customer consent for using Age and purchase data in loyalty predictions, disclosing purposes per GDPR/CCPA.
@@ -252,11 +265,11 @@ Minimal Data Use: Exclude non-essential fields like Customer ID from modeling (a
 
 
 **2. Fairness**
-Issue: Models may introduce bias, particularly by Age, leading to unfair treatment across customer groups.
+**Issue:** Models may introduce bias, particularly by Age, leading to unfair treatment across customer groups.
 
-Context: Age (18-70) has a weak correlation with loyalty (~ -0.001). The binary target (~56% Loyal, 44% Non-Loyal) uses SMOTE for balance, but fairness across Age groups wasn’t tested. The scatter plot (SVM probabilities vs. Review Rating) shows no clear Age patterns, but bias risks remain. Risks:Age Bias: Younger or older customers may be misclassified as Non-Loyal, affecting reward allocation (e.g., younger customers with fewer purchases excluded).Feature Bias: Review Rating may reflect subjective experiences unevenly, amplifying demographic biases.Retention Disparity: Unequal reward distribution could reduce loyalty or cause dissatisfaction among certain groups.
+**Context**: Age (18-70) has a weak correlation with loyalty (~ -0.001). The binary target (~56% Loyal, 44% Non-Loyal) uses SMOTE for balance, but fairness across Age groups wasn’t tested. The scatter plot (SVM probabilities vs. Review Rating) shows no clear Age patterns, but bias risks remain. Risks:Age Bias: Younger or older customers may be misclassified as Non-Loyal, affecting reward allocation (e.g., younger customers with fewer purchases excluded).Feature Bias: Review Rating may reflect subjective experiences unevenly, amplifying demographic biases.Retention Disparity: Unequal reward distribution could reduce loyalty or cause dissatisfaction among certain groups.
 
-Mitigations:
+**Mitigations:**
 Fairness Audits: Evaluate predictions by Age groups (e.g., <30, 30-50, >50) using metrics like demographic parity or equal opportunity.
 Feature Evaluation: Remove Age if it adds bias without predictive value. Test alternatives like purchase recency.
 Balanced Targeting: Ensure equitable reward distribution across demographics, monitored via A/B testing.
@@ -265,15 +278,15 @@ Fairness-Aware Models: Use techniques like adversarial training if biases emerge
 
 
 **3. Accuracy**
-Issue: Low model accuracy (~0.51-0.53 for SVM, ~0.49 for Logistic Regression, ~0.50 for KNN) undermines reliability for retention decisions.
+**Issue:** Low model accuracy (~0.51-0.53 for SVM, ~0.49 for Logistic Regression, ~0.50 for KNN) undermines reliability for retention decisions.
 
-Context: Weak feature correlations (~0.00-0.01) result in near-random performance (baseline ~0.50). Confusion matrices show ~40-50% misclassifications, and the scatter plot reveals no clear prediction patterns. This limits effective loyalty forecasting.
+**Context:** Weak feature correlations (~0.00-0.01) result in near-random performance (baseline ~0.50). Confusion matrices show ~40-50% misclassifications, and the scatter plot reveals no clear prediction patterns. This limits effective loyalty forecasting.
 Risks:
-Misclassification Costs: False positives waste marketing budgets; false negatives miss loyal customers, reducing revenue.
+**Misclassification Costs:** False positives waste marketing budgets; false negatives miss loyal customers, reducing revenue.
 Customer Experience: Inaccurate targeting (e.g., excluding Loyal customers from rewards) may increase churn.
 Business Decisions: Relying on ~0.51 accuracy risks poor ROI and misinformed strategies.
 
-Mitigations:
+**Mitigations:**
 Improve Data: Collect predictors like purchase amount, recency, or product type to boost accuracy (>0.60).
 Fallback Rules: Use rules (e.g., Review Rating >4.0, Previous Purchases >30) if accuracy remains low.
 Transparent Reporting: Communicate ~0.51 accuracy to stakeholders, highlighting limitations.
@@ -282,15 +295,15 @@ Continuous Monitoring: Track errors post-deployment using confusion matrix insig
 
 
 **4. Accountability**
-Issue: Lack of clear ownership for model predictions risks unaddressed errors or customer harm.
+**Issue:** Lack of clear ownership for model predictions risks unaddressed errors or customer harm.
 
-Context: The code automates predictions but doesn’t define who monitors outcomes or handles complaints (e.g., misclassified customers missing rewards). Retention actions (e.g., rewards) have real-world impacts, requiring accountability.
+**Context:** The code automates predictions but doesn’t define who monitors outcomes or handles complaints (e.g., misclassified customers missing rewards). Retention actions (e.g., rewards) have real-world impacts, requiring accountability.
 Risks:
-Customer Harm: False negatives exclude loyal customers from benefits, with no redress process.
+**Customer Harm:** False negatives exclude loyal customers from benefits, with no redress process.
 Organizational Risk: Undefined roles may delay error correction, risking financial or legal issues.
 Stakeholder Trust: Lack of accountability reduces confidence in data science initiatives.
 
-Mitigations:
+**Mitigations:**
 Assign Ownership: Designate a data science lead to monitor performance and address feedback, using dashboards for error tracking.
 Feedback Mechanism: Implement an appeal process for reward exclusions, linked to Customer ID (with privacy safeguards).
 Audit Trails: Log predictions and decisions for traceability and audits.
@@ -299,23 +312,23 @@ Regular Reviews: Conduct quarterly reviews of model outcomes and A/B test result
 
 
 **5. Transparency**
-Issue: Limited communication of model limitations (~0.51 accuracy, weak predictors) to stakeholders or customers risks distrust and misinformed decisions.
+**Issue:** Limited communication of model limitations (~0.51 accuracy, weak predictors) to stakeholders or customers risks distrust and misinformed decisions.
 
-Context: The code provides metrics (accuracy, F1, confusion matrices) and visualizations (heatmap, scatter plot), but there’s no mechanism to explain these to non-technical audiences. Low accuracy and weak correlations need clear disclosure.
+**Context:** The code provides metrics (accuracy, F1, confusion matrices) and visualizations (heatmap, scatter plot), but there’s no mechanism to explain these to non-technical audiences. Low accuracy and weak correlations need clear disclosure.
 Risks:
 Stakeholder Misunderstanding: Business leaders may overestimate model reliability, leading to flawed strategies.
 Customer Distrust: Customers may feel unfairly targeted without understanding prediction logic.
 Regulatory Non-Compliance: Lack of explainability risks violating GDPR’s requirement for automated decision-making transparency.
 
-Mitigations:
+**Mitigations:**
 Explainable Outputs: Create simplified reports summarizing accuracy (~0.51), limitations (weak features), and visuals (e.g., confusion matrix).
 Customer Communication: Disclose data-driven targeting to customers with opt-out options, ensuring GDPR/CCPA compliance.
 Model Interpretability: Use Logistic Regression coefficients (if viable) to explain feature impacts (e.g., “Higher Review Rating slightly increases Loyal probability”).
 Documentation: Maintain detailed records of code, data, and limitations (e.g., “Accuracy limited by missing predictors”), shared with stakeholders.
 
-
 **Conclusion**
 The project faces ethical challenges: privacy risks from Customer ID/Age, fairness concerns from potential Age bias, low accuracy (~0.51) impacting reliability, accountability gaps in error handling, and transparency issues in communicating limitations. Mitigations include anonymization, fairness audits, better data, clear ownership, and simplified reporting, aligning with retail loyalty ethics (consent, equity, trust).
 
 ## Source Codes and Datasets
-Upload your model files and dataset into a GitHub repo and add the link here. 
+Kaggle File:
+https://www.kaggle.com/datasets/bhadramohit/customer-shopping-latest-trends-dataset
