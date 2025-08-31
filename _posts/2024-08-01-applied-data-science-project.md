@@ -11,13 +11,14 @@ The primary goal of this project is to optimize Kapital Fashion’s product offe
 
 To achieve this goal, we have identified four key business objectives:
 
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/4df47d1b-4ff5-438b-b435-2d56ede52299" />
 Analyze the relationship between product condition (new, gently used, used, etc.) and price to determine its impact on pricing tiers.
 
-Forecast customer loyalty using review ratings and purchase frequency.
+🟩 Forecast customer loyalty using review ratings and purchase frequency.
 
-Segment customers to design targeted discount strategies that drive future sales.
+🟩 Segment customers to design targeted discount strategies that drive future sales.
 
-Leverage text analytics from online fashion discussions to inform and refine Kapital’s global product, pricing, and engagement strategies.
+🟩 Leverage text analytics from online fashion discussions to inform and refine Kapital’s global product, pricing, and engagement strategies.
 
 Through these objectives, the project combines quantitative analysis (pricing, segmentation, forecasting) with qualitative insights (text analytics) to deliver a comprehensive, data-backed strategy for Kapital Fashion’s long-term success.
 
